@@ -1,0 +1,40 @@
+.about{
+  text-align: left;
+  line-height: 1.5;
+  background-color: red;
+}
+.container{
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+.about-image{
+  width: 200px;
+  height: 200px;
+}
+button{
+  padding: 0.7em;
+  border: none;
+}
+#index{
+  text-align: center;
+}
+.container{
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+.cards-container{
+  margin-top: 4rem;
+  display: flex;
+  justify-content: space-between;
+}
+.card{
+  flex: 0 1 32%;
+}
+.image{
+  width: 100%;
+  height: 200px;
+}
