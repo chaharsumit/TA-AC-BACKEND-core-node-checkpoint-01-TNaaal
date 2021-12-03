@@ -16,7 +16,16 @@ function handleRequest(req, res) {
       fs.createReadStream("./index.html").pipe(res);
     } else if (req.method === "GET" && req.url === "/about") {
       fs.createReadStream("./about.html").pipe(res);
-    } else if (req.method === "GET" && req.url === "/contact") {
+    } else if (req.method === 'GET' && req.url.split('.').pop() === 'css'){
+      res.setHeader('Content-Type', 'text/css');
+      fs.createReadStream(__dirname + '/assets/stylesheets/styles.css').pipe(res);
+    } else if (req.method === 'GET' && req.url.split('/').pop() === '1.jpg'){
+      res.setHeader('Content-Type', 'image/jpg');
+      fs.createReadStream(__dirname + '/assets/images/1.jpg').pipe(res);
+    } else if (req.method === 'GET' && req.url.split('/').pop() === '2.jpg'){
+      res.setHeader('Content-Type', 'image/jpg');
+      fs.createReadStream(__dirname + '/assets/images/2.jpg').pipe(res);
+    }  else if (req.method === "GET" && req.url === "/contact") {
       fs.createReadStream("./contact.html").pipe(res);
     } else if (req.method === "POST" && req.url === "/form") {
       let parsedData = qs.parse(store);
